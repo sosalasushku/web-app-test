@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        main {
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        section {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: center;
+        }
+
+        button {
+            width: 100%;
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <main id="root">
+        <h1>Web App</h1>
+        <section>
+            <button>
+                Глобальный
+            </button>
+            <button>
+                Удобный
+            </button>
+            <button>
+                Гибкий
+            </button>
+        </section>
+    </main>
+</body>
+<script>
+    const { backgroundColor, setBackgroundColor, bg_color } = window.Telegram.WebApp
+    setBackgroundColor(backgroundColor)
+    console.log(bg_color)
+</script>
+
+</html>
