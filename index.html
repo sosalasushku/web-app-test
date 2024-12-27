@@ -39,6 +39,8 @@
         button {
             width: 100%;
             padding: 8px;
+            background-color: var(--tg-theme-button-color);
+            color: var(--tg-theme-button-text-color);
         }
     </style>
 </head>
@@ -62,9 +64,9 @@
     </main>
 </body>
 <script>
-    const { backgroundColor, setBackgroundColor, bg_color } = window.Telegram.WebApp
+    const { BackButton, backgroundColor, setBackgroundColor, bg_color } = window.Telegram.WebApp
     setBackgroundColor(backgroundColor)
-    console.log(bg_color)
+    BackButton.isVisible = true
 </script>
 
 </html>
