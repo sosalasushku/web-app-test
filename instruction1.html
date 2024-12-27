@@ -60,5 +60,12 @@
         </ol>
     </main>
 </body>
+<script>
+    const { BackButton } = window.Telegram.WebApp
+    BackButton.show()
+    BackButton.onClick(() => {
+        window.location.href = 'index.html';
+    })
+</script>
 
 </html>
