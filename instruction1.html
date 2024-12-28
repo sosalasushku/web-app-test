@@ -10,6 +10,7 @@
         * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
             font-family: sans-serif;
             line-height: 130%;
             color: var(--tg-theme-text-color);
@@ -34,7 +35,7 @@
             position: absolute;
             top: 0;
             bottom: 0;
-            left: 18px;
+            left: 14px;
             width: 4px;
             min-width: 4px;
             background: var(--tg-theme-button-color);
@@ -56,16 +57,17 @@
         }
 
         li:before {
+            font-weight: 600;
             margin-right: 10px;
             content: counter(item);
             background: var(--tg-theme-button-color);
             border-radius: 100%;
             color: var(--tg-theme-button-text-color);
             font-size: 20px;
-            width: 40px;
-            min-width: 40px;
-            border: 4px solid var(--tg-theme-bg-color);
-            height: 40px;
+            width: 32px;
+            min-width: 32px;
+            outline: 4px solid var(--tg-theme-bg-color);
+            height: 32px;
             text-align: center;
             display: flex;
             align-items: center;
