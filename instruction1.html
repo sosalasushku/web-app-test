@@ -110,7 +110,7 @@
             <div id="timeline"></div>
             <li>
                 <div>
-                    Скачайте клиент <span class="link">по ссылке</span>
+                    Скачайте клиент <span class="link" onclick="goToPlayMarket">по ссылке</span>
                 </div>
 
             </li>
@@ -151,7 +151,7 @@
     </main>
 </body>
 <script>
-    const { BackButton, MainButton, downloadFile, showPopup } = window.Telegram.WebApp
+    const { BackButton, MainButton, downloadFile, showPopup, openLink } = window.Telegram.WebApp
     BackButton.show()
     BackButton.onClick(() => {
         window.location.href = 'index.html';
@@ -160,10 +160,19 @@
     MainButton.hasShineEffect = true
     MainButton.text = 'Выбрать Удобный режим'
 
-    const saveFile = () => {
-        downloadFile({
-            url: '/assets/moose.webp',
-            file_name: 'moose.webp'
+    const goToPlayMarket = () => {
+        openLink(
+            'https://play.google.com/store/apps/details?id=com.v2raytun.android&hl=ru',
+            {
+                try_instant_view: false
+            }
+        )
+    }
+
+    const saveFile = async () => {
+        await downloadFile({
+            url: 'https://upload.wikimedia.org/wikipedia/commons/5/5d/Wikipedia-logo-v4-ru-xmas_135px.png',
+            file_name: 'pic.png'
         })
     }
     // MainButton.onClick(() => {
