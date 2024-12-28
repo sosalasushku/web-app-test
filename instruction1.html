@@ -11,6 +11,7 @@
             margin: 0;
             padding: 0;
             font-family: sans-serif;
+            line-height: 130%;
             color: var(--tg-theme-text-color);
         }
 
@@ -24,7 +25,51 @@
         }
 
         ol {
-            margin-left: 16px;
+            position: relative;
+            list-style: none;
+            counter-reset: item;
+        }
+
+        #timeline {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 14px;
+            width: 4px;
+            min-width: 4px;
+            background: var(--tg-theme-button-color);
+            z-index: -1;
+        }
+
+        li {
+            counter-increment: item;
+            display: flex;
+            margin-bottom: 28px;
+        }
+
+        li:last-child {
+            margin-bottom: 0;
+        }
+
+        li>p {
+            margin-top: 7px;
+        }
+
+        li:before {
+            margin-right: 10px;
+            content: counter(item);
+            background: var(--tg-theme-button-color);
+            border-radius: 100%;
+            color: var(--tg-theme-button-text-color);
+            font-size: 20px;
+            width: 32px;
+            min-width: 32px;
+            border: 4px solid var(--tg-theme-bg-color);
+            height: 32px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     </style>
 </head>
@@ -34,28 +79,43 @@
         <h4>Инструкция по настройке на Android</h4>
         <h5>Режим Удобный</h5>
         <ol>
+            <div id="timeline"></div>
             <li>
-                Скачайте клиент по ссылке
+                <p>
+                    Скачайте клиент по ссылке
+                </p>
             </li>
             <li>
-                Сохраните к себе на устройство файл Config.json, который находится ниже этого сообщения.
+                <p>
+                    Сохраните к себе на устройство файл Config.json, который находится ниже этого сообщения.
+                </p>
             </li>
             <li>
-                Откройте клиент, нажмите на значок плюса в правом верхнем углу, выберите пункт Пользовательский конфиг,
-                а
-                затем — Импорт из файла. В проводнике выберите скачанный Config.json, после чего конфигурация будет
-                добавлена в клиент.
+                <p>
+                    Откройте клиент, нажмите на значок плюса в правом верхнем углу, выберите пункт Пользовательский
+                    конфиг,
+                    а затем — Импорт из файла. В проводнике выберите скачанный Config.json, после чего конфигурация
+                    будет
+                    добавлена в клиент.
+                </p>
             </li>
             <li>
-                Нажмите на значок информации у добавленной конфигурации, откроется страница, где можно заменить название
-                из цифр на
-                более удобное. Сохраните новое название, нажав галочку сверху справа.
+                <p>
+                    Нажмите на значок информации у добавленной конфигурации, откроется страница, где можно заменить
+                    название
+                    из цифр на более удобное. Сохраните новое название, нажав галочку сверху справа.
+                </p>
             </li>
             <li>
-                Нажмите на кнопку подключения вверху и дайте все разрешения на подключения, которые попросит система.
+                <p>
+                    Нажмите на кнопку подключения вверху и дайте все разрешения на подключения, которые попросит
+                    система.
+                </p>
             </li>
             <li>
-                Все должно заработать
+                <p>
+                    Все должно заработать
+                </p>
             </li>
         </ol>
     </main>
