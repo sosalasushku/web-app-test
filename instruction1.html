@@ -61,7 +61,7 @@
     </main>
 </body>
 <script>
-    const { BackButton, MainButton, downloadFile, showAlert } = window.Telegram.WebApp
+    const { BackButton, MainButton, downloadFile, showPopup } = window.Telegram.WebApp
     BackButton.show()
     BackButton.onClick(() => {
         window.location.href = 'index.html';
@@ -70,23 +70,9 @@
     MainButton.hasShineEffect = true
     MainButton.text = 'Выбрать Удобный режим'
     MainButton.onClick(() => {
-        try {
-            downloadFile(
-                'https://pbs.twimg.com/profile_images/1839398687791067137/nhRiauEI_400x400.jpg',
-                'test.jpg'
-            )
-        } catch (e) {
-            console.log('first', e)
-        }
-        try {
-            downloadFile(
-                '/assets/moose.webp',
-                'moose.webp'
-            )
-        } catch (e) {
-            console.log('second', e)
-        }
-        showAlert('Удобный режим подключён!')
+        showPopup({
+            message: 'Удобный режим подключён!'
+        })
     })
 </script>
 
