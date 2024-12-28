@@ -126,7 +126,7 @@
     </main>
 </body>
 <script>
-    const { BackButton, MainButton, downloadFile, showPopup } = window.Telegram.WebApp
+    const { BackButton, MainButton, SecondaryButton } = window.Telegram.WebApp
     BackButton.show()
     BackButton.onClick(() => {
         window.location.href = 'index.html';
@@ -134,11 +134,12 @@
     MainButton.isVisible = true
     MainButton.hasShineEffect = true
     MainButton.text = 'Выбрать Удобный режим'
-    MainButton.onClick(() => {
-        showPopup({
-            message: 'Удобный режим подключён!'
-        })
-    })
+    SecondaryButton.text = 'Написать в поддержку'
+    // MainButton.onClick(() => {
+    //     showPopup({
+    //         message: 'Удобный режим подключён!'
+    //     })
+    // })
 </script>
 
 </html>
