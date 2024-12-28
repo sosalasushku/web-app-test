@@ -27,10 +27,6 @@
             justify-content: space-between;
         }
 
-        a {
-            color: var(--tg-theme-link-color);
-        }
-
         ol {
             position: relative;
             list-style: none;
@@ -81,11 +77,27 @@
         button {
             display: flex;
             margin-top: 12px;
+            width: 100%;
+            padding: 12px;
+            background-color: var(--tg-theme-button-color);
+            color: var(--tg-theme-button-text-color);
+            outline: none;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
         }
 
         strong {
             font-weight: 600;
             color: var(--tg-theme-accent-text-color);
+        }
+
+        .link {
+            color: var(--tg-theme-link-color);
+            font-weight: 600;
+            text-decoration: underline;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -98,16 +110,14 @@
             <div id="timeline"></div>
             <li>
                 <div>
-                    Скачайте клиент <a
-                        href="https://play.google.com/store/apps/details?id=com.v2raytun.android&hl=ru">по
-                        ссылке</a>
+                    Скачайте клиент <span class="link">по ссылке</span>
                 </div>
 
             </li>
             <li>
                 <div>
                     Сохраните к себе на устройство файл конфигурации
-                    <button onclick="goToPlayMarket">Сохранить</button>
+                    <button onclick="saveFile">Сохранить</button>
                 </div>
             </li>
             <li>
@@ -141,7 +151,7 @@
     </main>
 </body>
 <script>
-    const { BackButton, MainButton, openLink } = window.Telegram.WebApp
+    const { BackButton, MainButton, downloadFile, showPopup } = window.Telegram.WebApp
     BackButton.show()
     BackButton.onClick(() => {
         window.location.href = 'index.html';
@@ -150,8 +160,11 @@
     MainButton.hasShineEffect = true
     MainButton.text = 'Выбрать Удобный режим'
 
-    const goToPlayMarket = () => {
-        openLink('https://play.google.com/store/apps/details?id=com.v2raytun.android&hl=ru')
+    const saveFile = () => {
+        downloadFile({
+            url: '/assets/moose.webp',
+            file_name: 'moose.webp'
+        })
     }
     // MainButton.onClick(() => {
     //     showPopup({
