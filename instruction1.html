@@ -78,20 +78,9 @@
             justify-content: center;
         }
 
-        .download-file {
+        button {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            width: 100%;
-            padding: 12px;
-            background-color: var(--tg-theme-button-color);
-            color: var(--tg-theme-button-text-color);
-            outline: none;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
+            margin-top: 12px;
         }
 
         strong {
@@ -118,7 +107,7 @@
             <li>
                 <div>
                     Сохраните к себе на устройство файл конфигурации
-                    <a href="./assets/moose.webp" class="download-file">Сохранить</a>
+                    <button onclick="goToPlayMarket">Сохранить</button>
                 </div>
             </li>
             <li>
@@ -152,7 +141,7 @@
     </main>
 </body>
 <script>
-    const { BackButton, MainButton } = window.Telegram.WebApp
+    const { BackButton, MainButton, openLink } = window.Telegram.WebApp
     BackButton.show()
     BackButton.onClick(() => {
         window.location.href = 'index.html';
@@ -160,6 +149,10 @@
     MainButton.isVisible = true
     MainButton.hasShineEffect = true
     MainButton.text = 'Выбрать Удобный режим'
+
+    const goToPlayMarket = () => {
+        openLink('https://play.google.com/store/apps/details?id=com.v2raytun.android&hl=ru')
+    }
     // MainButton.onClick(() => {
     //     showPopup({
     //         message: 'Удобный режим подключён!'
