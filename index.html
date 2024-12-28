@@ -13,6 +13,7 @@
             box-sizing: border-box;
             font-family: sans-serif;
             color: var(--tg-theme-text-color);
+            background-color: var(--tg-theme-bg-color);
         }
 
         main {
@@ -76,8 +77,7 @@
     </main>
 </body>
 <script>
-    const { BackButton, backgroundColor, setBackgroundColor, bg_color } = window.Telegram.WebApp
-    setBackgroundColor(backgroundColor)
+    const { BackButton, bg_color } = window.Telegram.WebApp
     BackButton.isVisible = true
     BackButton.hide()
 </script>
