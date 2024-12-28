@@ -95,11 +95,18 @@
             color: var(--tg-theme-link-color);
         }
 
+        .no-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
         kbd {
             border: 1px solid var(--tg-theme-text-color);
             border-radius: 4px;
             padding: 1px 4px;
             font-weight: 400;
+            font-family: monospace;
+            background-color: var(--tg-theme-section-bg-color);
         }
 
         .link {
@@ -127,7 +134,9 @@
             <li>
                 <div>
                     Сохраните к себе на устройство файл конфигурации
-                    <button onclick="saveFile">Сохранить</button>
+                    <a href="/assets/moose.webp" download="Moose.webp" class="no-link">
+                        <button onclick="saveFile">Сохранить</button>
+                    </a>
                 </div>
             </li>
             <li>
