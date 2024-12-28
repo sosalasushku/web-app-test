@@ -50,7 +50,6 @@
 
         li {
             counter-increment: item;
-            display: flex;
             margin-bottom: 28px;
         }
 
@@ -79,6 +78,10 @@
         }
 
         .download-file {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
             width: 100%;
             padding: 12px;
             background-color: var(--tg-theme-button-color);
@@ -139,7 +142,7 @@
     </main>
 </body>
 <script>
-    const { BackButton, MainButton, SecondaryButton } = window.Telegram.WebApp
+    const { BackButton, MainButton } = window.Telegram.WebApp
     BackButton.show()
     BackButton.onClick(() => {
         window.location.href = 'index.html';
@@ -147,9 +150,6 @@
     MainButton.isVisible = true
     MainButton.hasShineEffect = true
     MainButton.text = 'Выбрать Удобный режим'
-    SecondaryButton.isVisible = true
-    SecondaryButton.text = 'Написать в поддержку'
-    SecondaryButton.position = 'bottom'
     // MainButton.onClick(() => {
     //     showPopup({
     //         message: 'Удобный режим подключён!'
