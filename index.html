@@ -16,16 +16,8 @@
             background-color: var(--tg-theme-bg-color);
         }
 
-        main {
-            padding: 12px;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            align-items: center;
-            justify-content: space-between;
-        }
-
         section {
+            padding: 12px;
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -64,9 +56,9 @@
 
 <body>
     <main id="root">
-        <h1>Shadowlos</h1>
-        <img class="emoji" src="./assets/moose.webp" />
         <section>
+            <h1>Shadowlos</h1>
+            <img class="emoji" src="./assets/moose.webp" />
             <button>
                 Глобальный
             </button>
@@ -79,7 +71,8 @@
                 Гибкий
             </button>
         </section>
-        <section>
+        <div style="width: 100%; height: 2px; background-color: var(--tg-theme-section-separator-color);"></div>
+        <section style="background-color:var(--tg-theme-secondary-bg-color);">
             <div style="color:var(--tg-theme-hint-color);width:100%;height:24px;">
                 hint_color
             </div>
